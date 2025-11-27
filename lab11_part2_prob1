@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+void setToHundred(int** p) {
+    **p = 100;  
+}
+int main(){
+  int x = 10;
+  int *p = &x;
+  setToHundred(&p);
+  cout<<x<<endl;
+}
