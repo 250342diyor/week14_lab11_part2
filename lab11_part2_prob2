@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+void swapRef(int &a, int &b);
+void swapPtr(int *a, int *b);
+int main() {
+    int a, b;
+    cout << "Enter 2 numbers: ";
+    cin >> a >> b;
+    int &aRef = a,&bRef=b;
+    swapRef(aRef,bRef);
+    cout<<"Swap with reference"<<endl;
+    cout << a << " " << b << endl;
+    int c,d;
+    cout << "Enter 2 numbers: ";
+    cin >> c >> d;
+    swapPtr(&c, &d);
+    cout<<"Swap with pointer"<<endl;
+    cout << c << " " << d << endl;
+}
+void swapRef(int &a, int &b) {
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+void swapPtr(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
