@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int sum2D(int** m, int r, int c) {
+    int sum = 0;
+    int** row = m;
+    for (int i = 0; i < r; i++, row++) {
+        int* col = *row;
+        for (int j = 0; j < c; j++, col++) {
+            sum += *col;
+        }
+    }
+    return sum;
+}
+
+int main() {
+    int r, c;
+    cout << "Enter rows and columns: ";
+    cin >> r >> c;
+
+    int** m = new int*[r];
+    cout << "Enter matrix values: ";
+    for (int i = 0; i < r; i++) {
+        m[i] = new int[c];
+        for (int j = 0; j < c; j++) cin >> m[i][j];
+    }
+
+    cout << "Sum: " << sum2D(m, r, c);
+}
