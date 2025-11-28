@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void printIfValid(int* p) {
+    if (p == nullptr) cout << "null";
+    else cout << *p;
+}
+
+int main() {
+    cout << "Enter values (number or n), press Ctrl+D to stop: ";
+
+    string s;
+    bool first = true;
+
+    while (cin >> s) {
+        if (!first) cout << ", ";
+        first = false;
+
+        if (s == "n") {
+            printIfValid(nullptr);
+        } else {
+            int* x = new int(stoi(s));
+            printIfValid(x);
+        }
+    }
+
+    return 0;
+}
