@@ -7,14 +7,12 @@ int main() {
     cout << "Enter 2 numbers: ";
     cin >> a >> b;
     swapRef(a,b);
-    cout<<"Swap with reference"<<endl;
-    cout << a << " " << b << endl;
+    cout<<"Swap with reference: "<< a << " " << b << endl;
     int c,d;
     cout << "Enter 2 numbers: ";
     cin >> c >> d;
     swapPtr(&c, &d);
-    cout<<"Swap with pointer"<<endl;
-    cout << c << " " << d << endl;
+    cout<<"Swap with pointer: "<< c << " " << d <<endl;
 }
 void swapRef(int &a, int &b) {
     int temp = a;
